@@ -27,7 +27,8 @@ defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'ePortfolio Grading';
 $string['modulename'] = 'ePortfolio Grading';
-$string['eportfolioname'] = 'ePortfolio Grading';
+
+$string['eportfolioname'] = 'Title';
 
 // Overview table.
 $string['overview:table:btn:grade'] = 'Add grading';
