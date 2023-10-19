@@ -27,6 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'ePortfolio Bewertung';
 $string['modulename'] = 'ePortfolio Bewertung';
+$string['eportfolioname'] = 'ePortfolio Bewertung';
 
 // Overview table.
 $string['overview:table:btn:grade'] = 'Bewerten';
