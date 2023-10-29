@@ -118,7 +118,7 @@ function eportfolio_render_overview_table($courseid, $cmid, $url) {
                                 'action' => 'grade')), get_string('overview:table:btn:grade', 'mod_eportfolio'),
                         array('class' => 'btn btn-primary'));
 
-                $deletebtn .= html_writer::link(new moodle_url('/mod/eportfolio/view.php',
+                $deletebtn = html_writer::link(new moodle_url('/mod/eportfolio/view.php',
                         array('id' => $cmid, 'fileid' => $ent['fileitemid'], 'userid' => $ent['userid'],
                                 'action' => 'delete')), '', array('class' => 'btn btn-danger fa fa-trash ml-3',
                         'title' => get_string('overview:table:actions:delete', 'local_eportfolio')));
