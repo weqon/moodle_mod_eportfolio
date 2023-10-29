@@ -33,6 +33,9 @@ $string['eportfolioname'] = 'Titel';
 // Overview table.
 $string['overview:table:btn:grade'] = 'Bewerten';
 $string['overview:table:btn:view'] = 'Anzeigen';
+$string['overview:table:btn:delete'] = 'Neue Freigabe erlauben';
+$string['overview:table:btn:delete:help'] = 'Mit Klick auf "Neue Freigabe erlauben" wird die aktuelle Einreichung entfernt und die bisher gesetzten Bewertungen gelöscht.
+Die Kursteilnehmer/innen erhalten die Möglichkeit, ihre Einreichung erneut durchzuführen, z. B. um eine korrigierte Version bereitzustellen.';
 
 // Grading form.
 $string['gradeform:header'] = 'Benotung & Feedback';

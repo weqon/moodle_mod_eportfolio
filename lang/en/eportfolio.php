@@ -33,6 +33,9 @@ $string['eportfolioname'] = 'Title';
 // Overview table.
 $string['overview:table:btn:grade'] = 'Add grading';
 $string['overview:table:btn:view'] = 'View grading';
+$string['overview:table:btn:delete'] = 'Allow new submission';
+$string['overview:table:btn:delete:help'] = 'Clicking on "Allow new submission" will remove the current submission and delete the existing grade.
+Course participants will be given the option to resubmit their submission, e.g. to provide a corrected version.';
 
 // Grading form.
 $string['gradeform:header'] = 'Grade & Feedback';

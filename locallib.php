@@ -59,6 +59,9 @@ function eportfolio_render_overview_table($courseid, $cmid, $url) {
 
     $actionsallowed = false;
 
+    $actionbtn = '';
+    $deletebtn = '';
+
     // First we have to check, if current user is editingteacher.
     if (is_enrolled($coursecontext, $USER, 'mod/eportfolio:grade_eport')) {
 
@@ -83,13 +86,19 @@ function eportfolio_render_overview_table($courseid, $cmid, $url) {
                 'grade',
                 'actions',
         ));
+
+        $actionhelp = html_writer::tag('button', '', array('class' => 'btn btn-default fa fa-question-circle ml-1',
+                'data-toggle' => 'popover', 'data-container' => 'body', 'data-placement' => 'bottom',
+                'title' => get_string('overview:table:btn:delete', 'mod_eportfolio'),
+                'data-content' => get_string('overview:table:btn:delete:help', 'mod_eportfolio')));
+
         $table->define_headers(array(
                 get_string('overview:table:filename', 'local_eportfolio'),
                 get_string('overview:table:filetimemodified', 'local_eportfolio'),
                 get_string('overview:table:sharedby', 'local_eportfolio'),
                 get_string('overview:table:sharestart', 'local_eportfolio'),
                 get_string('overview:table:grading', 'local_eportfolio'),
-                get_string('overview:table:actions', 'local_eportfolio'),
+                get_string('overview:table:actions', 'local_eportfolio') . $actionhelp,
         ));
         $table->define_baseurl($url);
         $table->set_attribute('class', 'table-hover');
@@ -120,8 +129,8 @@ function eportfolio_render_overview_table($courseid, $cmid, $url) {
 
                 $deletebtn = html_writer::link(new moodle_url('/mod/eportfolio/view.php',
                         array('id' => $cmid, 'fileid' => $ent['fileitemid'], 'userid' => $ent['userid'],
-                                'action' => 'delete')), '', array('class' => 'btn btn-danger fa fa-trash ml-3',
-                        'title' => get_string('overview:table:actions:delete', 'local_eportfolio')));
+                                'action' => 'delete')), '', array('class' => 'btn btn-secondary fa fa-undo ml-3',
+                        'title' => get_string('overview:table:btn:delete', 'mod_eportfolio')));
 
             } else {
 
@@ -130,6 +139,7 @@ function eportfolio_render_overview_table($courseid, $cmid, $url) {
                         array('id' => $cmid, 'fileid' => $ent['fileitemid'], 'userid' => $ent['userid'],
                                 'action' => 'view')), get_string('overview:table:btn:view', 'mod_eportfolio'),
                         array('class' => 'btn btn-primary'));
+
             }
 
             $table->add_data(
