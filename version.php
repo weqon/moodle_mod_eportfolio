@@ -26,8 +26,8 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'mod_eportfolio';
 $plugin->release = '0.1.1';
-$plugin->version = 2023092200;
-$plugin->requires = 2022112800;
+$plugin->version = 2023102900;
+$plugin->requires = 2021051700;
 $plugin->maturity = MATURITY_RC;
 $plugin->dependencies = array(
         'local_eportfolio' => ANY_VERSION,
