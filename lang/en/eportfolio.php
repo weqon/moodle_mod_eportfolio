@@ -63,10 +63,10 @@ $string['message:subject'] = 'Notification about new assessments for ePortfolio'
 $string['message:contexturlname'] = 'View grade for ePortfolio';
 
 // Delete shared ePortfolio
-$string['delete:header'] = 'Delete file';
+$string['delete:header'] = 'Allow new submission?';
 $string['delete:confirm'] = 'Confirm';
-$string['delete:checkconfirm'] = '<b>Do you really want to delete this file?</b><br><br>
-Filename: {$a->filename}<br>Shared by: {$a->username}<br><br><b>Any existing grade will also be deleted!</b>';
+$string['delete:checkconfirm'] = '<b>Do you really want to allow a new submission for this file?</b><br><br>
+Filename: {$a->filename}<br>Shared by: {$a->username}<br><br><b>The submitted file and any existing grades will also be deleted!</b>';
 $string['delete:success'] = 'The selected file was deleted successfully!';
 $string['delete:error'] = 'There was an error while deleting the file! Please try again!';
 

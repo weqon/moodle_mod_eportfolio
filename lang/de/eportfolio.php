@@ -63,10 +63,10 @@ $string['message:subject'] = 'Mitteilung über eine neue Bewertung für Ihr ePor
 $string['message:contexturlname'] = 'Bewertung für ePortfolio anzeigen';
 
 // Delete shared ePortfolio
-$string['delete:header'] = 'Datei löschen';
+$string['delete:header'] = 'Neue Freigabe erlauben?';
 $string['delete:confirm'] = 'Löschen bestätigen';
-$string['delete:checkconfirm'] = '<b>Möchten Sie die ausgewählte Datei wirklich löschen?</b><br><br>
-Dateiname: {$a->filename}<br>Eingereicht von: {$a->username}<br><br><b>Bestehende Bewertungen werden ebenfalls gelöscht!</b>';
+$string['delete:checkconfirm'] = '<b>Möchten Sie für die ausgewählte Datei wirklich eine neue Freigabe erlauben?</b><br><br>
+Dateiname: {$a->filename}<br>Eingereicht von: {$a->username}<br><br><b>Die eingereichte Datei und bestehende Bewertungen werden gelöscht!</b>';
 $string['delete:success'] = 'Datei wurde erfolgreich gelöscht!';
 $string['delete:error'] = 'Beim Löschen der Datei ist ein Fehler aufgetreten! Bitte versuchen Sie es erneut!';
 

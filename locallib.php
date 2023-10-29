@@ -113,10 +113,21 @@ function eportfolio_render_overview_table($courseid, $cmid, $url) {
             $getgrade = $DB->get_record('eportfolio_grade', ['courseid' => $courseid, 'cmid' => $cmid,
                     'userid' => $ent['userid'], 'itemid' => $ent['fileitemid']]);
 
-            $grade = './';
 
             if ($USER->id === $ent['userid'] || has_capability('mod/eportfolio:grade_eport', $coursecontext)) {
-                $grade = ($getgrade->grade) ? $getgrade->grade . ' %' : './.';
+                if ($getgrade) {
+                    $grade = $getgrade->grade . ' %';
+
+                    // Add additional info icon for showing feedbacktext.
+                    $gradefeedback =
+                            html_writer::tag('i', '', array('class' => 'fa fa-info-circle ml-3', 'data-toggle' => 'tooltip',
+                                    'data-placement' => 'bottom', 'title' => format_string($getgrade->feedbacktext)));
+
+                    $grade .= $gradefeedback;
+
+                } else {
+                    $grade = './.';
+                }
             }
 
             if ($actionsallowed) {
@@ -179,7 +190,7 @@ function eportfolio_send_grading_message($courseid, $userfrom, $userto, $filenam
     $a->userfrom = fullname($userfromdata);
     $a->filename = $filename;
     $a->viewurl = (string) $contexturl;
-    
+
     $course = $DB->get_record('course', ['id' => $courseid]);
     $a->coursename = $course->fullname;
 
