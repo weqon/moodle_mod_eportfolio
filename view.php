@@ -205,8 +205,9 @@ if (check_current_eportfolio_course($course->id)) {
             $data = new stdClass();
 
             $data->userfullname = fullname($user);
+            $data->backurl = $url;
+            $data->backurlstring = get_string('gradeform:backbtn', 'mod_eportfolio');
             $data->timecreated = date('d.m.Y', $h5pfile->timecreated);
-            $data->timemodified = date('d.m.Y', $h5pfile->timemodified);
             $data->h5pplayer = \core_h5p\player::display($fileurl, $config, false, 'local_eportfolio', false);
             $data->gradeform = $mform->render();
 
@@ -239,14 +240,15 @@ if (check_current_eportfolio_course($course->id)) {
         $data = new stdClass();
 
         $data->userfullname = fullname($user);
+        $data->backurl = $url;
+        $data->backurlstring = get_string('gradeform:backbtn', 'mod_eportfolio');
         $data->timecreated = date('d.m.Y', $h5pfile->timecreated);
-        $data->timemodified = date('d.m.Y', $h5pfile->timemodified);
         $data->h5pplayer = \core_h5p\player::display($fileurl, $config, false, 'local_eportfolio', false);
 
         $grader = $DB->get_record('user', ['id' => $grade->graderid]);
 
         $data->grade = $grade->grade . ' %';
-        $data->gradetext = s($grade->feedbacktext);
+        $data->gradetext = format_text($grade->feedbacktext);
         $data->grader = fullname($grader);
 
         echo $OUTPUT->render_from_template('mod_eportfolio/eportfolio_view', $data);
